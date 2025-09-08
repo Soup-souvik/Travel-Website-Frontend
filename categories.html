@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Categories | Dreams Become True</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #ff7e5f;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --accent: #6a4c93;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f5f7fa;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles (would match your index.html) */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        /* Hero Section */
+        .categories-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .categories-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .categories-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* Main Categories Section */
+        .main-categories {
+            padding: 5rem 0;
+        }
+        
+        .main-categories .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .category-card h3 {
+            padding: 1.5rem 1.5rem 0.5rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .category-card p {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+        }
+        
+        .category-card .btn {
+            display: inline-block;
+            margin: 0 1.5rem 1.5rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+        }
+        
+        .category-card .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        /* Footer Styles (would match your index.html) */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .categories-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .categories-hero p {
+                font-size: 1rem;
+            }
+            
+            .main-categories .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header would match your index.html -->
+    <header>
+        <div class="container">
+            <!-- Your header content -->
+        </div>
+    </header>
+
+    <section class="categories-hero">
+        <div class="container">
+            <h1>Discover Your Perfect Journey</h1>
+            <p>Find destinations that match your unique interests and travel style</p>
+        </div>
+    </section>
+
+    <section class="main-categories">
+        <div class="container">
+            <!-- Grid of all category cards -->
+            <div class="category-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYZ3ut_aLSQIHapZ1ofVSybb-k_FHYlllA-g&s" alt="Sacred Temple">
+                <h3>Sacred Temples</h3>
+                <p>Explore ancient spiritual sites and architectural wonders</p>
+                <a href="temples.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1470114716159-e389f8712fda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Beaches">
+                <h3>Tropical Beaches</h3>
+                <p>Relax on pristine sands with crystal clear waters</p>
+                <a href="beaches.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mountains">
+                <h3>Mountain Escapes</h3>
+                <p>Breathtaking peaks and serene alpine landscapes</p>
+                <a href="mountains.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="Cities">
+                <h3>Vibrant Cities</h3>
+                <p>Experience the energy and culture of world capitals</p>
+                <a href="cities.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1470004914212-05527e49370b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Adventure">
+                <h3>Adventure Travel</h3>
+                <p>Thrilling experiences for the adrenaline seekers</p>
+                <a href="adventure.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="category-card">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Luxury">
+                <h3>Luxury Retreats</h3>
+                <p>Indulge in world-class accommodations and service</p>
+                <a href="luxury.html" class="btn">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer would match your index.html -->
+    <footer>
+        <div class="container">
+            <!-- Your footer content -->
+            <p>&copy; 2023 Dreams Become True Travel. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.category-card');
+            
+            cards.forEach((card, index) => {
+                // Add delay based on index for staggered animation
+                card.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
+                card.style.opacity = '0';
+            });
+        });
+    </script>
+</body>
+</html>

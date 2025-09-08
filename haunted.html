@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haunted Places | Dreams Become True</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base styles from index.html */
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+        }
+        
+        /* Add haunted-specific styles */
+        .haunted-header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+        
+        .haunted-intro {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .haunted-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 3rem 0;
+        }
+        
+        .haunted-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .haunted-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .haunted-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .haunted-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .haunted-card:hover .haunted-img img {
+            transform: scale(1.1);
+        }
+        
+        .haunted-content {
+            padding: 1.5rem;
+        }
+        
+        .haunted-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .haunted-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .haunted-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .haunted-country {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+        
+        .scare-level {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Same header as index.html -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>Dreams Become True</span>
+                </div>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="categories.html">Travel Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Haunted Hero -->
+    <section class="haunted-header">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Haunted Places Around the World</h1>
+                <p>Explore spine-chilling locations with eerie histories and ghostly legends</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <a href="categories.html">Categories</a> &gt; 
+            <span>Haunted Places</span>
+        </div>
+    </section>
+
+    <!-- Haunted Intro -->
+    <section class="haunted-intro">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ghostly Encounters</h2>
+            </div>
+            <p>From abandoned asylums to ancient castles, these locations are known for their paranormal activity and dark histories. Whether you're a skeptic or a believer, these haunted destinations will send chills down your spine.</p>
+        </div>
+    </section>
+
+    <!-- Haunted Listing -->
+    <section class="haunted-listing">
+        <div class="container">
+            <div class="haunted-grid">
+                <!-- Location 1 -->
+                <div class="haunted-card">
+                    <div class="haunted-img">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Edinburgh Vaults">
+                        <div class="haunted-country">Scotland</div>
+                        <div class="scare-level">High</div>
+                    </div>
+                    <div class="haunted-content">
+                        <h3>Edinburgh Vaults</h3>
+                        <p>Underground chambers beneath Edinburgh's streets, known for violent spirits and oppressive energy.</p>
+                        <div class="haunted-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">18th Century</div>
+                                <div class="stat-label">Origin</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">120+</div>
+                                <div class="stat-label">Reported Sightings</div>
+                            </div>
+                        </div>
+                        <a href="edinburgh-vaults.html" class="btn">Explore Location</a>
+                    </div>
+                </div>
+                
+                <!-- Location 2 -->
+                <div class="haunted-card">
+                    <div class="haunted-img">
+                        <img src="https://images.unsplash.com/photo-1580077873521-dc86339ef022?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Eastern State Penitentiary">
+                        <div class="haunted-country">USA</div>
+                        <div class="scare-level">Medium</div>
+                    </div>
+                    <div class="haunted-content">
+                        <h3>Eastern State Penitentiary</h3>
+                        <p>Abandoned prison in Philadelphia known for ghostly apparitions and unexplained sounds.</p>
+                        <div class="haunted-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">1829</div>
+                                <div class="stat-label">Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">75,000+</div>
+                                <div class="stat-label">Inmates</div>
+                            </div>
+                        </div>
+                        <a href="eastern-state.html" class="btn">Explore Location</a>
+                    </div>
+                </div>
+                
+                <!-- More haunted locations... -->
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1 -->
+                <div class="footer-column">
+                    <h3>Dreams Become True</h3>
+                    <p>Making your travel dreams a reality since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="categories.html">Travel Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="temples.html">Sacred Temples</a></li>
+                        <li><a href="haunted.html">Haunted Places</a></li>
+                        <li><a href="mountains.html">Mountains</a></li>
+                        <li><a href="rivers.html">Rivers & Lakes</a></li>
+                        <li><a href="beaches.html">Beaches</a></li>
+                        <li><a href="waterfalls.html">Waterfalls</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Travel Street</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> contact@dreamsbecometrue.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Dreams Become True. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on Scroll
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.destination-card, .category-card-large, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Initialize elements with opacity 0 for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.destination-card, .category-card-large, .testimonial-card');
+            
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'all 0.5s ease';
+            });
+            
+            // Trigger animations after a short delay
+            setTimeout(() => {
+                elements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>

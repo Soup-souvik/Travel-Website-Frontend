@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacred Temples | Architectural Wonders of Faith</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9c7c5b;
+            --primary-dark: #7a6146;
+            --secondary: #3a6351;
+            --dark: #333;
+            --light: #f8f5f2;
+            --gold: #d4af37;
+            --silver: #c0c0c0;
+            --bronze: #cd7f32;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(156, 124, 91, 0.3);
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(156, 124, 91, 0.4);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            color: #777;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Temple Header */
+        .temple-header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1585506942812-e72b29cef752?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .temple-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .hero-content p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            padding: 1rem 0;
+            background: linear-gradient(to right, var(--light), #eee, var(--light));
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumbs a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumbs a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .breadcrumbs span {
+            color: #777;
+        }
+        
+        /* Temple Intro */
+        .temple-intro {
+            background-color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .temple-intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--gold), var(--silver), var(--bronze));
+        }
+        
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Religion Filter */
+        .religion-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+        
+        .religion-filter button {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary);
+            background: transparent;
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .religion-filter button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--primary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .religion-filter button.active, 
+        .religion-filter button:hover {
+            color: white;
+        }
+        
+        .religion-filter button.active::before,
+        .religion-filter button:hover::before {
+            width: 100%;
+        }
+        
+        /* Temple Grid */
+        .temple-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .temple-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .temple-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .temple-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .temple-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .temple-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .temple-card:hover .temple-img img {
+            transform: scale(1.15);
+        }
+        
+        .temple-country {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+        }
+        
+        .temple-country i {
+            margin-right: 8px;
+            color: var(--gold);
+        }
+        
+        .temple-content {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .temple-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .temple-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .temple-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .temple-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-item .stat-number {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .stat-item .stat-label {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Temple Types */
+        .temple-types {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, white 0%, #f9f9f9 100%);
+        }
+        
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .type-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .type-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(156, 124, 91, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+        
+        .type-card:hover .type-icon {
+            background: var(--primary);
+            color: white;
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .type-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .type-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .type-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .type-card a i {
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .type-card a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .type-card a:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Load More Button */
+        .load-more {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .load-more .btn {
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .load-more .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .load-more .btn:hover::after {
+            left: 100%;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .temple-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .temple-header {
+                height: 60vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .temple-img {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .temple-header {
+                height: 50vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .religion-filter {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .religion-filter button {
+                width: 80%;
+            }
+            
+            .temple-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Temple Hero -->
+    <section class="temple-header">
+        <div class="floating-elements">
+            <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%;"></div>
+            <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%;"></div>
+            <div class="floating-element" style="width: 80px; height: 80px; top: 30%; left: 70%;"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Sacred Temples of the World</h1>
+                <p>Discover spiritual sanctuaries and architectural marvels across cultures and civilizations</p>
+                <a href="#explore" class="btn" style="animation: pulse 2s infinite;">Begin Exploration</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> &gt; 
+            <a href="categories.html">Categories</a> &gt; 
+            <span>Temples</span>
+        </div>
+    </section>
+
+    <!-- Temple Intro -->
+    <section class="temple-intro" id="explore">
+        <div class="container">
+            <div class="section-title">
+                <h2>Architectural Wonders of Faith</h2>
+                <p>Temples represent humanity's spiritual aspirations and architectural achievements across millennia</p>
+            </div>
+            <div class="intro-text">
+                <p>From the ancient ruins of forgotten civilizations to modern marvels of sacred architecture, these spiritual sanctuaries have stood as testaments to human devotion and artistic expression. Each temple tells a unique story - of faith, culture, and the eternal human search for meaning. Our collection showcases the world's most magnificent temples, carefully curated to inspire your spiritual journey and architectural appreciation.</p>
+            </div>
+            
+            <!-- Religion Filter -->
+            <div class="religion-filter">
+                <button class="active" data-religion="all">All Traditions</button>
+                <button data-religion="hindu"><i class="fas fa-om"></i> Hindu</button>
+                <button data-religion="buddhist"><i class="fas fa-yin-yang"></i> Buddhist</button>
+                <button data-religion="christian"><i class="fas fa-church"></i> Christian</button>
+                <button data-religion="islamic"><i class="fas fa-mosque"></i> Islamic</button>
+                <button data-religion="jain"><i class="fas fa-peace"></i> Jain</button>
+                <button data-religion="shinto"><i class="fas fa-torii-gate"></i> Shinto</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temple Listing -->
+    <section class="temple-listing">
+        <div class="container">
+            <div class="temple-grid">
+                <!-- Temple 1 - Angkor Wat -->
+                <div class="temple-card" data-religion="hindu,buddhist">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Angkor Wat">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> Cambodia</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Angkor Wat</h3>
+                        <p>The largest religious monument in the world, originally constructed as a Hindu temple dedicated to Vishnu, gradually transforming into a Buddhist temple.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">12th Century</div>
+                                <div class="stat-label">Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">402 acres</div>
+                                <div class="stat-label">Size</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">5 Towers</div>
+                                <div class="stat-label">Design</div>
+                            </div>
+                        </div>
+                        <a href="angkor-wat.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+                
+                <!-- Temple 2 - Borobudur -->
+                <div class="temple-card" data-religion="buddhist">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1564501049415-5bb6c6f8f5c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Borobudur">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> Indonesia</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Borobudur</h3>
+                        <p>The world's largest Buddhist temple, featuring nine stacked platforms, six square and three circular, topped by a central dome.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">9th Century</div>
+                                <div class="stat-label">Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2,672</div>
+                                <div class="stat-label">Reliefs</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">504</div>
+                                <div class="stat-label">Buddhas</div>
+                            </div>
+                        </div>
+                        <a href="borobudur.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+                
+                <!-- Temple 3 - Kinkaku-ji -->
+                <div class="temple-card" data-religion="buddhist">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Kinkaku-ji">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> Japan</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Kinkaku-ji (Golden Pavilion)</h3>
+                        <p>A Zen Buddhist temple covered in gold leaf, reflecting beautifully on its pond, originally built as a retirement villa for a shogun.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">1397</div>
+                                <div class="stat-label">Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">3 Stories</div>
+                                <div class="stat-label">Architecture</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Gold Leaf</div>
+                                <div class="stat-label">Covering</div>
+                            </div>
+                        </div>
+                        <a href="kinkaku-ji.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+                
+                <!-- Temple 4 - Meenakshi Temple -->
+                <div class="temple-card" data-religion="hindu">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Meenakshi Temple">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> India</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Meenakshi Temple</h3>
+                        <p>A historic Hindu temple dedicated to Parvati and Shiva, famous for its 14 colorful gateway towers covered with thousands of stone figures.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">6th Century</div>
+                                <div class="stat-label">Origin</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">14</div>
+                                <div class="stat-label">Gopurams</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">33,000</div>
+                                <div class="stat-label">Sculptures</div>
+                            </div>
+                        </div>
+                        <a href="meenakshi.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+                
+                <!-- Temple 5 - Wat Rong Khun -->
+                <div class="temple-card" data-religion="buddhist">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wat Rong Khun">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> Thailand</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Wat Rong Khun (White Temple)</h3>
+                        <p>A contemporary, unconventional Buddhist temple featuring white color and glass pieces that sparkle in the sun, symbolizing Buddha's purity.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">1997</div>
+                                <div class="stat-label">Construction</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Modern</div>
+                                <div class="stat-label">Style</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Mirrors</div>
+                                <div class="stat-label">Decoration</div>
+                            </div>
+                        </div>
+                        <a href="wat-rong-khun.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+                
+                <!-- Temple 6 - Hagia Sophia -->
+                <div class="temple-card" data-religion="christian,islamic">
+                    <div class="temple-img">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hagia Sophia">
+                        <div class="temple-country"><i class="fas fa-map-marker-alt"></i> Turkey</div>
+                    </div>
+                    <div class="temple-content">
+                        <h3>Hagia Sophia</h3>
+                        <p>Originally a Greek Orthodox Christian cathedral, later an Ottoman imperial mosque, and now a museum in Istanbul.</p>
+                        <div class="temple-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">537 AD</div>
+                                <div class="stat-label">Built</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">1,500 yrs</div>
+                                <div class="stat-label">History</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">184 ft</div>
+                                <div class="stat-label">Dome</div>
+                            </div>
+                        </div>
+                        <a href="hagia-sophia.html" class="btn">Explore Temple</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more">
+                <a href="#" class="btn">Load More Temples <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temple Types Section -->
+    <section class="temple-types">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sacred Architecture Styles</h2>
+                <p>Explore different architectural traditions and their spiritual significance</p>
+            </div>
+            
+            <div class="types-grid">
+                <!-- Type 1 -->
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <h3>Hindu Temples</h3>
+                    <p>Colorful and intricate temples dedicated to Hindu deities, featuring elaborate carvings and towering gopurams that symbolize the cosmic mountain.</p>
+                    <a href="hindu-temples.html">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Type 2 -->
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-yin-yang"></i>
+                    </div>
+                    <h3>Buddhist Temples</h3>
+                    <p>Serene spaces for meditation, often featuring stupas, Buddha statues, and peaceful gardens designed to inspire enlightenment.</p>
+                    <a href="buddhist-temples.html">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Type 3 -->
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3>Christian Cathedrals</h3>
+                    <p>Grand churches with stunning stained glass, soaring arches, and rich artistic heritage pointing toward the heavens.</p>
+                    <a href="christian-temples.html">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Type 4 -->
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-mosque"></i>
+                    </div>
+                    <h3>Islamic Mosques</h3>
+                    <p>Architectural wonders with domes, minarets, and intricate geometric patterns reflecting the infinite nature of Allah.</p>
+                    <a href="islamic-temples.html">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        // Religion filter functionality
+        document.querySelectorAll('.religion-filter button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('.religion-filter button.active').classList.remove('active');
+                this.classList.add('active');
+                
+                const religion = this.dataset.religion;
+                const temples = document.querySelectorAll('.temple-card');
+                
+                temples.forEach(temple => {
+                    if(religion === 'all' || temple.dataset.religion.includes(religion)) {
+                        temple.style.display = 'block';
+                    } else {
+                        temple.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Animate temple cards on scroll
+        function animateOnScroll() {
+            const templeCards = document.querySelectorAll('.temple-card');
+            const windowHeight = window.innerHeight;
+            
+            templeCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const animationDelay = index * 100;
+                
+                if(cardPosition < windowHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, animationDelay);
+                }
+            });
+        }
+        
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Floating elements animation
+        const floatingElements = document.querySelectorAll('.floating-element');
+        floatingElements.forEach((el, index) => {
+            const duration = 15 + (index * 5);
+            const delay = index * 2;
+            el.style.animation = `float ${duration}s ${delay}s infinite linear`;
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

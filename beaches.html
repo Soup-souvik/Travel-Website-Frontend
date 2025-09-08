@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Paradises | Where Dreams Become Reality</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-blue: #2c83c3;
+            --secondary-blue: #1f5b8a;
+            --sand-color: #f5e6ca;
+            --turquoise: #4ecdc4;
+            --dark-teal: #1a2a3a;
+            --white: #ffffff;
+            --coral: #ff7e6b;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--dark-teal);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Beach Hero Section */
+        .beach-header {
+            background: linear-gradient(135deg, rgba(44, 131, 195, 0.3) 0%, rgba(31, 91, 138, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        .beach-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(transparent, #f8f9fa);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            max-width: 800px;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            animation: slideUp 1s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            color: var(--white);
+        }
+        
+        .hero-content p {
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            font-weight: 300;
+        }
+        
+        .btn-beach {
+            display: inline-block;
+            background-color: var(--sand-color);
+            color: var(--dark-teal);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+        }
+        
+        .btn-beach:hover {
+            background-color: transparent;
+            color: var(--sand-color);
+            border-color: var(--sand-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Wave Animation */
+        .wave-decoration {
+            position: absolute;
+         
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f8f9fa" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f8f9fa" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f8f9fa"/></svg>') repeat-x;
+            background-size: 1200px 100px;
+            z-index: 3;
+            animation: wave 12s linear infinite;
+        }
+        
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--coral);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Beach Cards Grid */
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding-bottom: 5rem;
+        }
+        
+        /* Beach Cards */
+        .beach-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            background: white;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .beach-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .beach-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .beach-feature {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--dark-teal);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+        
+        .beach-feature i {
+            margin-right: 5px;
+            color: var(--primary-blue);
+        }
+        
+        .card-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .card-img::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .beach-card:hover .card-img img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-teal);
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--dark-teal);
+            padding: 5rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .testimonial-card i {
+            font-size: 2rem;
+            color: var(--coral);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 5rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-cta {
+            background-color: var(--coral);
+            color: white;
+        }
+        
+        .btn-cta:hover {
+            background-color: transparent;
+            color: white;
+            border-color: white;
+        }
+        /* Add this to your existing CSS */
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        padding: 6rem 0;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+        opacity: 0.15;
+        z-index: 0;
+    }
+    
+    .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .cta-content h2 {
+        color: white;
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .cta-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+    }
+    
+    .cta-features {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2.5rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+        background: rgba(255,255,255,0.1);
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+    
+    .feature-item:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-3px);
+    }
+    
+    .feature-item i {
+        font-size: 1.2rem;
+        margin-right: 0.7rem;
+        color: var(--coral);
+    }
+    
+    .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .btn-cta i {
+        margin-right: 0.7rem;
+    }
+    
+    .btn-call {
+        background-color: var(--coral);
+        color: white;
+    }
+    
+    .btn-email {
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+    }
+    
+    .btn-call:hover {
+        background-color: #e56a5a;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    
+    .btn-email:hover {
+        background-color: rgba(255,255,255,0.1);
+        transform: translateY(-3px);
+    }
+    
+    .cta-guarantee {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .cta-guarantee i {
+        color: var(--sand-color);
+        margin-right: 0.7rem;
+        font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .cta-content h2 {
+            font-size: 2.2rem;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .feature-item {
+            padding: 0.8rem 1.2rem;
+            font-size: 0.9rem;
+        }
+    }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1200px; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.3rem;
+            }
+            
+            .beach-header {
+                height: 70vh;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Beach Hero -->
+    <section class="beach-header">
+        <div class="hero-content">
+            <h1>Discover Beach Paradises</h1>
+            <p>Where golden sands meet turquoise waters</p>
+            <a href="#beaches" class="btn-beach">Explore Beaches</a>
+        </div>
+        
+    </section>
+    <div class="wave-decoration"></div>
+    <!-- Beach Listing -->
+    <section class="destinations" id="beaches">
+        <div class="container">
+            <div class="section-title">
+                <h2>World's Most Beautiful Beaches</h2>
+                <p>From secluded coves to vibrant shorelines, discover your perfect beach getaway</p>
+            </div>
+            <div class="destination-grid">
+                <!-- Beach 1 -->
+                <div class="beach-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="White sand beach with palm trees">
+                        <div class="beach-feature">
+                            <i class="fas fa-umbrella-beach"></i> Powder Sand
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Maldives Islands</h3>
+                        <p>Experience the iconic overwater bungalows and crystal-clear lagoons in this tropical paradise. Perfect for honeymooners and luxury seekers.</p>
+                        <a href="maldives.html" class="btn-beach">Explore Maldives</a>
+                    </div>
+                </div>
+                
+                <!-- Beach 2 -->
+                <div class="beach-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cliffside beach with dramatic rocks">
+                        <div class="beach-feature">
+                            <i class="fas fa-mountain"></i> Dramatic Cliffs
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Navagio Beach, Greece</h3>
+                        <p>Famous shipwreck beach surrounded by towering cliffs and the clearest blue waters. A photographer's dream location.</p>
+                        <a href="navagio.html" class="btn-beach">Explore Greece</a>
+                    </div>
+                </div>
+                
+                <!-- Beach 3 -->
+                <div class="beach-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tropical beach with palm trees">
+                        <div class="beach-feature">
+                            <i class="fas fa-water"></i> Crystal Clear
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bora Bora, French Polynesia</h3>
+                        <p>Legendary turquoise lagoon protected by a coral reef, with luxury resorts and breathtaking overwater bungalows.</p>
+                        <a href="borabora.html" class="btn-beach">Explore Bora Bora</a>
+                    </div>
+                </div>
+                
+                <!-- Beach 4 -->
+                <div class="beach-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="White sand beach with clear water">
+                        <div class="beach-feature">
+                            <i class="fas fa-sun"></i> Sunny Paradise
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Whitehaven Beach, Australia</h3>
+                        <p>7km stretch of the whitest sand in the world, with swirling silica sands that stay cool even in the blazing sun.</p>
+                        <a href="whitehaven.html" class="btn-beach">Explore Australia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Traveler Experiences</h2>
+                <p style="color: rgba(255,255,255,0.8);">What our visitors say about these beach paradises</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">The Maldives exceeded all my expectations. The water was so clear it looked like a swimming pool, and the service was impeccable.</p>
+                    <p class="testimonial-author">- Sarah Johnson</p>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">Navagio Beach in Greece was worth every step of the hike down. The view from the cliff is something I'll never forget.</p>
+                    <p class="testimonial-author">- Michael Chen</p>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="testimonial-text">Bora Bora is truly paradise on earth. Waking up to the sound of waves beneath our bungalow was magical.</p>
+                    <p class="testimonial-author">- Emily Rodriguez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Call to Action -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-content animate__animated animate__fadeIn">
+            <h2>Start Planning Your Dream Beach Vacation Today</h2>
+            <p>Take the first step toward your perfect beach escape. Our travel experts will craft a personalized itinerary just for you.</p>
+            
+            <div class="cta-features">
+                <div class="feature-item">
+                    <i class="fas fa-suitcase-rolling"></i>
+                    <span>Tailored Packages</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Luxury Accommodations</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 Support</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="tel:+18005551234" class="btn-cta btn-call">
+                    <i class="fas fa-phone-alt"></i> Call Our Experts
+                </a>
+                <a href="#contact-form" class="btn-cta btn-email">
+                    <i class="fas fa-envelope"></i> Get a Free Quote
+                </a>
+            </div>
+            
+            <div class="cta-guarantee">
+                <i class="fas fa-shield-alt"></i>
+                <span>Best Price Guarantee - No Booking Fees - Flexible Cancellation</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script>
+        // Improved animation trigger with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate beach cards when they come into view
+            const beachCards = document.querySelectorAll('.beach-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            beachCards.forEach(card => {
+                observer.observe(card);
+                // Add staggered delay based on position
+                const index = Array.from(beachCards).indexOf(card);
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
